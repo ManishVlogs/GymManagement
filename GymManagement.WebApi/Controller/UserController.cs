@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GymManagement.WebApi.Controller
 {
+    [Route("api/v{version:apiVersion}/User")]
+    [ApiVersion("1")]
+    [ApiController]
     public class UserController : ControllerBase
     {
         private readonly IUserService _IUserService;
@@ -11,11 +14,14 @@ namespace GymManagement.WebApi.Controller
         {
             _IUserService = UserService;
         }
-        public async Task<List< TestResponse>> TestApi(string var1, string var2)
+
+        [HttpGet]
+        [Route("GetTestApi")]
+        public async Task<List<TestResponse>> GetTestApi(string var1, string var2)
         {
             try
             {
-                var response = await _IUserService.TestInterface( var1, var2);
+                var response = await _IUserService.TestInterface(var1, var2);
                 return response;
             }
             catch (Exception ex)
