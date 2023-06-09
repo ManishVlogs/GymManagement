@@ -58,7 +58,7 @@ ConfigurationHelper.Initialize(builder.Configuration);
 #endregion
 
 var app = builder.Build();
-
+//ok
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
