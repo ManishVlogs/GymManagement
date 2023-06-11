@@ -8,9 +8,17 @@ namespace GymManagement.Domain.Model
 {
     public class TestResponse
     {
-        public int ID { get; set; }
         public string Name { get; set; }
-        public int Age { get; set; }
         
     }
+
+    public class TestResponse1
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+        public string Age { get; set; }
+
+    }
+
 }

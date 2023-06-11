@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GymManagement.Application.Services
 {
-    public class UserService : IUserService
+    public class UserService : IUserService 
     {
         private readonly IUserRepository _UserRepository;
         public UserService(IUserRepository UserRepository)
@@ -29,5 +29,19 @@ namespace GymManagement.Application.Services
                return response.TestInterface();
             }
         }
+
+        public async Task<List<TestResponse1>> TestInterface2(string var1, string var2)
+        {
+            var response = await _UserRepository.TestInterface2(var1, var2);
+            if (response == null || response.Rows.Count == 0)
+            {
+                return default;
+            }
+            else
+            {
+                return response.TestInterface1();
+            }
+        }
+
     }
 }

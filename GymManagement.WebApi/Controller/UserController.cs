@@ -30,5 +30,21 @@ namespace GymManagement.WebApi.Controller
                 throw;
             }
         }
+
+        [HttpGet]
+        [Route("GetTestApi2")]
+        public async Task<List<TestResponse1>> GetTestApi2(string var1, string var2)
+        {
+            try
+            {
+                var response = await _IUserService.TestInterface2(var1, var2);
+                return response;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
     }
 }

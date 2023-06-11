@@ -15,6 +15,11 @@ namespace GymManagement.Infra.Domain
                 public static readonly string SP_Name1 = "SPtest1";
                 public static readonly string SP_Name2 = "SPtest2";
             }
+
+            public static class Dashboard
+            {
+                public static readonly string SP_Name1 = "DashboardSP";
+            }
         }
     }
 }
