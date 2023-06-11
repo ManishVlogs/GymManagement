@@ -16,7 +16,7 @@ namespace GymManagement.Infra.CrossCutting.IoC
         public static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IUserService, UserService>();
-            services.AddScoped<IUserRepository, UserRepository>();  
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }

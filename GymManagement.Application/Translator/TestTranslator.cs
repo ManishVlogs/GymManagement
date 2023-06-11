@@ -18,11 +18,27 @@ namespace GymManagement.Application.Translator
             }
             var TestResponse = info.AsEnumerable().Select(row => new TestResponse
             {
-                ID = row.Field<int>("id"),
-                Age =row.Field<int>("Age"),
-                Name = row.Field<string>("Name"),
+                Name = row.Field<string>("name"),
+                //Age =row.Field<int>("Age"),
+                //Name = row.Field<string>("Name"),
             }).ToList();
             return TestResponse;
         }
+
+        public static List<TestResponse1>? TestInterface1(this DataTable info)
+        {
+            if (info == null || info.Rows.Count == 0)
+            {
+                return default;
+            }
+            var TestResponse = info.AsEnumerable().Select(row => new TestResponse1
+            {
+                Name = row.Field<string>("name"),
+                //Age =row.Field<int>("Age"),
+                //Name = row.Field<string>("Name"),
+            }).ToList();
+            return TestResponse;
+        }
+
     }
 }

@@ -28,5 +28,18 @@ namespace GymManagement.Infra.Domain.Repositories
             }
             return response;
         }
+
+        public async Task<DataTable> TestInterface2(string var1, string var2)
+        {
+            var response = new DataTable();
+            using (var dbParamenterCollection = new DBParameterCollection())
+            {
+                dbParamenterCollection.Add(new DBParameter("@Var1", var1, DbType.String, ParameterDirection.Input));
+                dbParamenterCollection.Add(new DBParameter("@Var2", var2, DbType.String, ParameterDirection.Input));
+                response = await Task.Run(() => dBHelper.ExecuteDataTable(KeyStore.StoredProcedure.Test.SP_Name1, dbParamenterCollection, CommandType.StoredProcedure));
+            }
+            return response;
+        }
+
     }
 }

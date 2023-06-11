@@ -10,5 +10,8 @@ namespace GymManagement.Domain.Interface.Repository
     public interface IUserRepository
     {
         Task<DataTable> TestInterface(string var1, string var2);
+
+        Task<DataTable> TestInterface2(string var1, string var2);
+
     }
 }
